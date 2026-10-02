@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dayu — Portfolio</title>
+<meta name="description" content="Portfolio profesional Ida Ayu Made Dwi Purnama Sari.">
+<meta name="author" content="Ida Ayu Made Dwi Purnama Sari">
+<style>
+:root{--bg:#0b120d;--card:#152017;--card2:#1b2a1e;--text:#f1f5ee;--muted:#a9b5aa;--green:#a8c98f;--green2:#6f9360;--line:#304331;--max:1160px}
+body.light{--bg:#f3f6f1;--card:#fff;--card2:#e9f0e6;--text:#182219;--muted:#536054;--green:#496d3d;--green2:#6f9360;--line:#cbd8c7}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 80% 10%,#30482e55,transparent 28%),var(--bg);color:var(--text);line-height:1.7;transition:.3s}
+a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}
+.container{width:min(var(--max),calc(100% - 32px));margin:auto}
+nav{position:fixed;top:14px;left:0;right:0;z-index:50}
+.nav{height:62px;border:1px solid var(--line);background:#122016dd;backdrop-filter:blur(18px);border-radius:18px;display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 18px}
+body.light .nav{background:#ffffffdd}
+.logo{font-weight:900;letter-spacing:.15em}.logo span{color:var(--green)}
+.links{display:flex;gap:24px;list-style:none}.links a{font-size:14px;color:var(--muted);transition:.25s}.links a:hover,.links a.active{color:var(--text)}
+.actions{display:flex;gap:8px;align-items:center}
+.btn,.icon,.menu{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:12px;padding:11px 16px;transition:.3s;cursor:pointer}
+.btn.primary{background:var(--green);color:#122011;border-color:var(--green);font-weight:800}.btn:hover,.icon:hover{transform:translateY(-2px);background:var(--card2)}
+.btn.primary:hover{background:#bddaa8}
+.icon,.menu{width:42px;height:42px;padding:0}.menu{display:none}
+section{padding:105px 0}.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;padding-top:120px}
+.eyebrow{color:var(--green);font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.1}h1{font-size:clamp(48px,8vw,92px);margin:15px 0}.accent{color:var(--green)}
+h2{font-size:clamp(32px,5vw,54px)}h3{font-size:22px}
+.hero p{color:var(--muted);max-width:650px}.typing{color:var(--green);font-weight:800;font-size:20px;min-height:32px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.meta{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:13px;margin-top:25px}
+.photo{width:min(390px,80vw);aspect-ratio:1;margin:auto;border-radius:38% 62% 58% 42%;padding:8px;background:linear-gradient(135deg,var(--green),#30482e,transparent);box-shadow:0 30px 80px #0006;animation:float 6s ease-in-out infinite}
+.photo-inner{height:100%;width:100%;overflow:hidden;border-radius:inherit;background:linear-gradient(145deg,#526f49,#101810);position:relative}
+.photo img{width:100%;height:100%;object-fit:cover}.fallback{position:absolute;inset:0;display:grid;place-items:center;font:900 110px Georgia;color:#edf6e8}
+@keyframes float{50%{transform:translateY(-12px) rotate(1deg)}}
+.head{max-width:720px;margin-bottom:42px}.head p:last-child{color:var(--muted);margin-top:14px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px}.about p{color:var(--muted);margin-bottom:16px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}.stat,.card{background:#ffffff08;border:1px solid var(--line);border-radius:22px;padding:25px}
+body.light .stat,body.light .card{background:#ffffffaa}.num{font:800 40px Georgia;color:var(--green)}
+.skills{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}.skill{margin:20px 0}.skilltop{display:flex;justify-content:space-between;font-weight:700;font-size:14px}.bar{height:8px;background:var(--card2);border-radius:99px;margin-top:8px;overflow:hidden}.bar i{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--green2),var(--green));transition:1s}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.badge{padding:6px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted);font-size:12px}
+.timeline{max-width:850px;margin:auto;border-left:1px solid var(--line)}.item{position:relative;padding:0 0 35px 38px}.item:before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--green)}.date{color:var(--green);font-size:12px;font-weight:800}.item p{color:var(--muted);margin-top:7px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.filter{padding:8px 14px;border:1px solid var(--line);border-radius:99px;background:transparent;color:var(--muted);cursor:pointer}.filter.active{background:var(--green);color:#122011;border-color:var(--green)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project{overflow:hidden;padding:0;cursor:pointer;transition:.3s}.project:hover{transform:translateY(-7px);box-shadow:0 25px 60px #0005}.thumb{aspect-ratio:16/9;overflow:hidden;background:linear-gradient(135deg,#3c5937,#111911);position:relative}.thumb img{width:100%;height:100%;object-fit:cover;transition:.5s}.project:hover img{transform:scale(1.05)}.placeholder{position:absolute;inset:0;display:grid;place-items:center;font:700 18px Georgia;color:#e8f1e4}.project-body{padding:21px}.tag{font-size:11px;color:var(--green);font-weight:900;letter-spacing:.12em}.project p{color:var(--muted);font-size:13px;margin-top:8px}
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}.contact-list{display:grid;gap:12px}.contact-item{padding:18px;border:1px solid var(--line);border-radius:16px;background:#ffffff08}.contact-item small{display:block;color:var(--muted)}.contact-item a{font-weight:700}.social{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.social a{border:1px solid var(--line);border-radius:99px;padding:6px 11px;font-size:12px;color:var(--muted)}
+form{display:grid;gap:14px}.field{display:grid;gap:6px}label{font-size:12px;font-weight:800;color:var(--muted)}input,textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--card2);color:var(--text);outline:none}textarea{min-height:140px;resize:vertical}input:focus,textarea:focus{border-color:var(--green)}
+footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+.reveal{opacity:0;transform:translateY(24px);transition:.7s}.reveal.show{opacity:1;transform:none}
+.modal{display:none;position:fixed;inset:0;z-index:100;background:#000b;place-items:center;padding:20px}.modal.open{display:grid}.modalbox{max-width:620px;width:100%;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;position:relative}.close{position:absolute;right:14px;top:14px;border:1px solid var(--line);background:transparent;color:var(--text);width:36px;height:36px;border-radius:50%;cursor:pointer}.modalbox p{color:var(--muted);margin-top:12px}
+@media(max-width:850px){.hero,.about,.skills,.contact{grid-template-columns:1fr}.hero{text-align:center}.hero p{margin:auto}.hero-actions,.meta{justify-content:center}.projects{grid-template-columns:1fr 1fr}.links{display:none}.menu{display:block}}
+@media(max-width:560px){.projects{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.nav .btn{display:none}section{padding:82px 0}.photo{width:280px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="nav container">
+<a class="logo" href="#home">DAYU<span>.</span></a>
+<ul class="links" id="links">
+<li><a class="active" href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#journey">Journey</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+</ul>
+<div class="actions"><button class="icon" id="theme" aria-label="Ganti tema">☼</button><button class="menu" id="menu" aria-label="Buka menu">☰</button><a class="btn primary" href="#contact">Hubungi Saya</a></div>
+</div></nav>
+
+<main>
+<section id="home"><div class="container hero">
+<div class="reveal">
+<p class="eyebrow">Personal Portfolio · 2026</p>
+<h1>Ida Ayu Made <span class="accent">Dwi Purnama Sari.</span></h1>
+<div class="typing"><span id="typing"></span>|</div>
+<p>Membuat desain sederhana berdampak, sambil terus mengembangkan kemampuan coding, teknologi, dan kreativitas digital.</p>
+<div class="hero-actions"><a class="btn primary" href="#projects">Lihat Portfolio →</a><a class="btn" href="#about">Tentang Saya</a></div>
+<div class="meta"><span>⌘ Coding</span><span>✦ Digital Design</span><span>◇ Creative Learning</span></div>
+</div>
+<div class="reveal">
+<div class="photo"><div class="photo-inner"><img src="foto-profil.jpg" alt="Foto Ida Ayu Made Dwi Purnama Sari" onerror="this.style.display='none'"><div class="fallback">D</div></div></div>
+</div>
+</div></section>
+
+<section id="about"><div class="container">
+<div class="head reveal"><p class="eyebrow">01 — About</p><h2>Tentang saya.</h2><p>Lebih dari sekadar membuat sesuatu terlihat bagus.</p></div>
+<div class="about"><div class="reveal"><p>Saya adalah <b>Ida Ayu Made Dwi Purnama Sari</b>, seorang mahasiswa yang memiliki ketertarikan pada coding dan dunia digital.</p><p>Saya memiliki latar belakang di bidang <b>coding</b> dan senang mempelajari teknologi, membuat website, mengeksplorasi desain, serta mengembangkan kemampuan secara bertahap.</p><p>Saya percaya karya yang baik tidak harus rumit. Dengan konsep yang jelas, tampilan rapi, dan tujuan yang tepat, desain sederhana pun dapat memberikan dampak.</p></div>
+<div class="stats reveal"><div class="stat"><div class="num" data-n="1">0</div><small>Core Skill</small></div><div class="stat"><div class="num" data-n="3">0</div><small>Project Concept</small></div><div class="stat"><div class="num" data-n="100">0</div><small>Curiosity %</small></div><div class="stat"><div class="num">∞</div><small>Ideas to Explore</small></div></div></div>
+</div></section>
+
+<section id="skills"><div class="container">
+<div class="head reveal"><p class="eyebrow">02 — Expertise</p><h2>Keahlian yang terus berkembang.</h2><p>Fokus utama saya adalah coding dan pembuatan karya digital.</p></div>
+<div class="skills"><div class="card reveal"><p class="eyebrow">Main Focus</p><h3>Coding & Digital Creation</h3><p style="color:var(--muted);margin-top:10px">Mengembangkan kemampuan coding, website, logika pemrograman, dan eksplorasi teknologi digital.</p><div class="badges"><span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">JavaScript</span><span class="badge">Python</span><span class="badge">UI Thinking</span></div></div>
+<div class="card reveal"><div class="skill"><div class="skilltop"><span>Coding</span><span>90%</span></div><div class="bar"><i data-w="90"></i></div></div><div class="skill"><div class="skilltop"><span>Web Development</span><span>80%</span></div><div class="bar"><i data-w="80"></i></div></div><div class="skill"><div class="skilltop"><span>UI / Visual Thinking</span><span>75%</span></div><div class="bar"><i data-w="75"></i></div></div><div class="skill"><div class="skilltop"><span>Problem Solving</span><span>85%</span></div><div class="bar"><i data-w="85"></i></div></div></div></div>
+</div></section>
+
+<section id="journey"><div class="container">
+<div class="head reveal"><p class="eyebrow">03 — Journey</p><h2>Pengalaman & pendidikan.</h2><p>Bagian berikut siap kamu ubah ketika data pengalaman formal sudah tersedia.</p></div>
+<div class="timeline">
+<div class="item reveal"><span class="date">2026 — SEKARANG</span><h3>Mahasiswa · <span style="color:var(--green)">GANTI DI SINI</span></h3><p>GANTI DI SINI — Isi nama institusi, jurusan, aktivitas, organisasi, atau pengalaman yang relevan.</p></div>
+<div class="item reveal"><span class="date">2025 — 2026</span><h3>Junior Coding Learner · GANTI DI SINI</h3><p>Contoh: mempelajari HTML, CSS, Python, Scratch, serta membuat beberapa project digital sederhana.</p></div>
+<div class="item reveal"><span class="date">PENDIDIKAN</span><h3>GANTI DI SINI — Institusi & Jurusan</h3><p>GANTI DI SINI — Tahun pendidikan dan deskripsi singkat.</p></div>
+</div></div></section>
+
+<section id="projects"><div class="container">
+<div class="head reveal"><p class="eyebrow">04 — Selected Work</p><h2>Project unggulan.</h2><p>Klik kartu project untuk melihat detail.</p></div>
+<div class="filters reveal"><button class="filter active" data-f="all">Semua</button><button class="filter" data-f="web">Web</button><button class="filter" data-f="coding">Coding</button><button class="filter" data-f="design">Design</button></div>
+<div class="projects">
+<article class="project card reveal" data-c="web" data-t="Personal Portfolio" data-d="Website portfolio personal dengan fokus visual elegan, responsif, dan pengalaman pengguna sederhana." tabindex="0"><div class="thumb"><img src="proyek-1.jpg" alt="Preview proyek portfolio" loading="lazy"><div class="placeholder">PERSONAL PORTFOLIO</div></div><div class="project-body"><span class="tag">WEB</span><h3>Personal Portfolio</h3><p>Website profesional untuk memperkenalkan diri dan karya.</p></div></article>
+<article class="project card reveal" data-c="coding" data-t="Mini Coding Project" data-d="Project latihan coding untuk memahami logika pemrograman dan interaksi sederhana." tabindex="0"><div class="thumb"><img src="proyek-2.jpg" alt="Preview proyek coding" loading="lazy"><div class="placeholder">CODING PROJECT</div></div><div class="project-body"><span class="tag">CODING</span><h3>Mini Coding Project</h3><p>Eksperimen coding untuk mengembangkan kemampuan teknis.</p></div></article>
+<article class="project card reveal" data-c="design" data-t="Simple Impact Design" data-d="Konsep desain sederhana dengan hierarchy, whitespace, konsistensi warna, dan pesan yang mudah dipahami." tabindex="0"><div class="thumb"><img src="proyek-3.jpg" alt="Preview proyek desain" loading="lazy"><div class="placeholder">SIMPLE IMPACT</div></div><div class="project-body"><span class="tag">DESIGN</span><h3>Simple Impact</h3><p>Eksplorasi desain sederhana dengan pesan yang kuat.</p></div></article>
+</div></div></section>
+
+<section id="contact"><div class="container">
+<div class="head reveal"><p class="eyebrow">05 — Contact</p><h2>Mari terhubung.</h2><p>Punya ide atau project? Kirim pesan melalui kontak di bawah.</p></div>
+<div class="contact"><div class="contact-list reveal">
+<div class="contact-item"><small>Email</small><a href="mailto:pdayu18@gmail.com">pdayu18@gmail.com</a></div>
+<div class="contact-item"><small>Phone / WhatsApp</small><a href="tel:+6288103833154">+62 881 0384 33154</a></div>
+<div class="contact-item"><small>Location</small><span>GANTI DI SINI — Kota, Indonesia</span></div>
+<div class="social"><a href="#">Instagram — GANTI DI SINI</a><a href="#">LinkedIn — GANTI DI SINI</a><a href="#">GitHub — GANTI DI SINI</a></div>
+</div>
+<div class="card reveal"><form id="form"><div class="field"><label for="name">Nama</label><input id="name" required placeholder="Nama kamu"></div><div class="field"><label for="email">Email</label><input id="email" type="email" required placeholder="nama@email.com"></div><div class="field"><label for="msg">Pesan</label><textarea id="msg" required placeholder="Tulis pesan..."></textarea></div><button class="btn primary">Kirim Pesan →</button></form></div></div>
+</div></section>
+</main>
+
+<footer><div class="container">© 2026 Ida Ayu Made Dwi Purnama Sari · Designed & coded with intention.</div></footer>
+
+<div class="modal" id="modal"><div class="modalbox"><button class="close" id="close">×</button><p class="eyebrow">Project Detail</p><h2 id="mtitle"></h2><p id="mdetail"></p></div></div>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const typing=$("#typing"), roles=["Mahasiswa","Coding Enthusiast","Digital Creator"];let ri=0,ci=0,del=false;
+function type(){let x=roles[ri];typing.textContent=x.slice(0,ci);if(!del&&ci<x.length){ci++;setTimeout(type,80)}else if(!del){del=true;setTimeout(type,1200)}else if(ci){ci--;setTimeout(type,40)}else{del=false;ri=(ri+1)%roles.length;setTimeout(type,250)}}type();
+
+$("#theme").onclick=()=>{document.body.classList.toggle("light");$("#theme").textContent=document.body.classList.contains("light")?"☾":"☼";localStorage.setItem("theme",document.body.classList.contains("light")?"light":"dark")};
+if(localStorage.getItem("theme")==="light"){document.body.classList.add("light");$("#theme").textContent="☾"}
+$("#menu").onclick=()=>{$("#links").style.display=$("#links").style.display==="flex"?"none":"flex"};
+$$(".links a").forEach(a=>a.onclick=()=>{$("#links").style.display="none"});
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");e.target.querySelectorAll?.(".bar i").forEach(x=>x.style.width=x.dataset.w+"%");e.target.querySelectorAll?.("[data-n]").forEach(x=>{let n=+x.dataset.n,start=performance.now();function c(t){let p=Math.min((t-start)/800,1);x.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(c)}requestAnimationFrame(c)});obs.unobserve(e.target)}}),{threshold:.15});
+$$(".reveal").forEach(x=>obs.observe(x));
+
+$$(".filter").forEach(b=>b.onclick=()=>{$$(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");let f=b.dataset.f;$$(".project").forEach(p=>p.style.display=f==="all"||p.dataset.c===f?"":"none")});
+
+const modal=$("#modal");$$(".project").forEach(p=>{p.onclick=()=>{modal.classList.add("open");$("#mtitle").textContent=p.dataset.t;$("#mdetail").textContent=p.dataset.d};p.onkeydown=e=>{if(e.key==="Enter")p.click()}});$("#close").onclick=()=>modal.classList.remove("open");modal.onclick=e=>{if(e.target===modal)modal.classList.remove("open")};document.onkeydown=e=>{if(e.key==="Escape")modal.classList.remove("open")};
+
+$("#form").onsubmit=e=>{e.preventDefault();let subject=encodeURIComponent("Pesan dari Portfolio Dayu"),body=encodeURIComponent("Nama: "+$("#name").value+"\nEmail: "+$("#email").value+"\n\nPesan:\n"+$("#msg").value);location.href="mailto:pdayu18@gmail.com?subject="+subject+"&body="+body};
+
+const sec=$$("main section"),links=$$(".links a");const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.remove("active"));let a=document.querySelector('.links a[href="#'+e.target.id+'"]');if(a)a.classList.add("active")}}),{rootMargin:"-40% 0px -50% 0px"});sec.forEach(s=>so.observe(s));
+</script>
+</body>
+</html>
